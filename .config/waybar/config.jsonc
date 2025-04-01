@@ -19,6 +19,7 @@
             "bluetooth",
             "network",
             "battery",
+            "idle_inhibitor",
             "custom/notification"
         ],
 
@@ -178,6 +179,13 @@
             ],
         },
 
+        "idle_inhibitor": {
+            "format": "{icon}",
+            "format-icons": {
+                "activated": "󰈉",
+                "deactivated": "󰈈",
+            },
+        },
 
           "custom/notification": {
             "tooltip": false,

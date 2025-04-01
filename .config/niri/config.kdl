@@ -48,6 +48,8 @@ prefer-no-csd
 spawn-at-startup "swww-daemon"
 spawn-at-startup "/home/river/Linux-Remote/Linux-Remote.py"
 spawn-at-startup "waybar"
+spawn-at-startup "xwayland-satellite"
+spawn-at-startup "swayidle"
 
 // Layouts
 layout {
