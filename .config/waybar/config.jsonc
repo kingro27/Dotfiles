@@ -1,0 +1,188 @@
+{
+        "layer": "top",
+        "position": "top",
+        "reload_style_on_change": true,
+
+        "modules-left": [
+            "custom/application-launcher",
+            "niri/workspaces",
+            "cava",
+        ],
+
+        "modules-center": [
+            "clock",
+        ],
+
+        "modules-right": [
+            "group/expand",
+            "tray",
+            "bluetooth",
+            "network",
+            "battery",
+            "custom/notification"
+        ],
+
+        "custom/application-launcher": {
+            "format": "󰣇",
+            "on-click": "wofi --show drun",
+            "tooltip": true,
+            "tooltip-format": "Application Launcher"
+        },
+
+        "cava": {
+            //        "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
+            "framerate": 30,
+            "autosens": 1,
+            "sensitivity": 100,
+            "bars": 14,
+            "lower_cutoff_freq": 50,
+            "higher_cutoff_freq": 10000,
+            "method": "pulse",
+            "source": "auto",
+            "stereo": true,
+            "reverse": false,
+            "bar_delimiter": 0,
+            "monstercat": false,
+            "waves": false,
+            "noise_reduction": 0.77,
+            "input_delay": 2,
+            "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+            "actions": {
+                    "on-click-right": "mode"
+                    }
+        },
+
+         "niri/workspaces": {
+            "format": "{icon}",
+            "on-click": "activate",
+            "all-outputs": true,
+            // "format-icons": {
+                //   "1": "一",
+                //   "2": "二",
+                //   "3": "三",
+                //   "4": "四",
+                //   "5": "五",
+                //   "6": "六",
+                //   "7": "七",
+                //   "8": "八",
+                //   "9": "九",
+                //   "10": "十"
+                // }
+            "format-icons": {
+                                    "1": "१",
+                                    "2": "२",
+                                    "3": "३",
+                                    "4": "४",
+                                    "5": "५",
+                                    "6": "६",
+                                    "7": "७",
+                                    "8": "८",
+                                    "9": "९",
+                                    "10": "०"
+                                    // "10": "१०"
+                }
+        },
+
+        "clock": {
+            "format": "{:%I:%M:%S %p} ",
+            "interval": 1,
+            "tooltip-format": "{:%Y-%m-%d}",
+        },
+
+        "group/expand": {
+            "orientation": "horizontal",
+            "drawer": {
+                "transition-duration": 600,
+                "transition-to-left": true,
+                "click-to-reveal": true
+            },
+            "modules": ["custom/expand", "custom/colorpicker","cpu","memory","temperature","custom/endpoint"],
+        },
+
+        "custom/expand": {
+            "format": "",
+            "tooltip": false
+        },
+        "custom/endpoint":{
+            "format": "|",
+            "tooltip": false
+        },
+
+        "custom/colorpicker": {
+            "format": "{}",
+            "return-type": "json",
+            "interval": "once",
+            "exec": "~/.config/waybar/scripts/colorpicker.sh -j",
+            "on-click": "~/.config/waybar/scripts/colorpicker.sh",
+            "signal": 1
+        },
+
+        "cpu": {
+            "format": "󰻠",
+            "tooltip": true
+        },
+
+        "memory": {
+            "format": ""
+        },
+
+        "temperature": {
+            "critical-threshold": 80,
+            "format": "",
+        },
+
+        "tray": {
+            "icon-size": 14,
+            "spacing": 10
+        },
+
+        "network": {
+            "format-wifi": "",
+            "format-ethernet":"",
+            "format-disconnected": "",
+            "tooltip-format-disconnected": "Error",
+            "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+            "tooltip-format-ethernet": "{ifname} 🖧 ",
+            "on-click": "kitty nmtui"
+        },
+        "bluetooth": {
+            "format-on": "󰂯",
+            "format-off": "BT-off",
+            "format-disabled": "󰂲",
+            "format-connected-battery": "{device_battery_percentage}% 󰂯",
+            "format-alt": "{device_alias} 󰂯",
+            "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+            "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+            "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
+            "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
+            "on-click-right": "blueman-manager",
+        },
+        "battery": {
+            "interval":30,
+            "states": {
+                "good": 95,
+                "warning": 30,
+                "critical": 20
+            },
+            "format": "{capacity}% {icon}",
+            "format-charging": "{capacity}% 󰂄",
+            "format-plugged": "{capacity}% 󰂄 ",
+            "format-alt": "{time} {icon}",
+            "format-icons": [
+                "󰁻",
+            "󰁼",
+            "󰁾",
+            "󰂀",
+            "󰂂",
+            "󰁹"
+            ],
+        },
+
+
+          "custom/notification": {
+            "tooltip": false,
+            "format": "󱅫",
+            "on-click": "swaync-client -t -sw",
+            "escape": true
+        },
+}
