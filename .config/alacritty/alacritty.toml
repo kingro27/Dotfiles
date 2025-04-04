@@ -1,7 +1,7 @@
 
 [bell]
 animation = "EaseOutCirc"
-color = "0x464d6a"
+color = "0x553334"
 duration = 0
 
 [colors]
@@ -28,7 +28,7 @@ white = "0xd0d0d0"
 yellow = "0xffcb6b"
 
 [colors.primary]
-background = "0x292d3e"
+background = "0x553334"
 foreground = "0xd0d0d0"
 
 [cursor]

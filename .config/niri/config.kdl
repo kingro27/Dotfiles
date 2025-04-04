@@ -51,6 +51,10 @@ spawn-at-startup "waybar"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "swayidle"
 
+environment {
+	DISPLAY ":0"
+}
+
 // Layouts
 layout {
    	gaps 5
@@ -83,9 +87,10 @@ layout {
 // Binds
 binds {
 	Mod+Shift+Slash { show-hotkey-overlay; }
-	Mod+Return { spawn "alacritty"; }
+	Mod+Return { spawn "kitty"; }
 	Mod+Q { close-window; }
 	Mod+Space { spawn "wofi" "--show" "drun"; }
+	Mod+L { spawn "hyprlock"; }
 
 	// Move focus to workspace
 	Mod+1 { focus-workspace 1; }
@@ -107,7 +112,7 @@ binds {
 	Mod+H     { focus-column-left; }
 	Mod+J     { focus-window-down; }
 	Mod+K     { focus-window-up; }
-	Mod+L     { focus-column-right; }
+	// Mod+L     { focus-column-right; }
 
 	// Move Window to Workspace
 	Mod+Ctrl+1 { move-column-to-workspace 1; }
