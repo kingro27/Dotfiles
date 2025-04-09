@@ -6,11 +6,12 @@
         "modules-left": [
             "custom/application-launcher",
             "niri/workspaces",
-            "cava",
+            "hyprland/workspaces",
+            "cava"
         ],
 
         "modules-center": [
-            "clock",
+            "clock"
         ],
 
         "modules-right": [
@@ -31,7 +32,7 @@
         },
 
         "cava": {
-            //        "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
+            "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
             "framerate": 30,
             "autosens": 1,
             "sensitivity": 100,
@@ -51,6 +52,37 @@
             "actions": {
                     "on-click-right": "mode"
                     }
+        },
+
+            "hyprland/workspaces": {
+            "format": "{icon}",
+            "on-click": "activate",
+            "all-outputs": true,
+            // "format-icons": {
+                //   "1": "一",
+                //   "2": "二",
+                //   "3": "三",
+                //   "4": "四",
+                //   "5": "五",
+                //   "6": "六",
+                //   "7": "七",
+                //   "8": "八",
+                //   "9": "九",
+                //   "10": "十"
+                // }
+            "format-icons": {
+                                    "1": "१",
+                                    "2": "२",
+                                    "3": "३",
+                                    "4": "४",
+                                    "5": "५",
+                                    "6": "६",
+                                    "7": "७",
+                                    "8": "८",
+                                    "9": "९",
+                                    "10": "०"
+                                    // "10": "१०"
+                }
         },
 
          "niri/workspaces": {
